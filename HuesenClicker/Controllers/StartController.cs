@@ -13,5 +13,10 @@ namespace HuesenClicker.Controllers
         {
             return View();
         }
+
+        public ActionResult Einstellungen()
+        {
+            return View();
+        }
     }
 }

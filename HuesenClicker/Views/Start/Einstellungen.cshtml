@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstellungen</title>
+    @Styles.Render("~/Content/bootstrap.css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+    </head>
+<body class="jumbotron">
+<div>
+    <div class="text-center">
+        <h1>Einstellungen</h1>
+    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="text-center">
+        <span class="glyphicon glyphicon-bullhorn"></span>
+        <input type="checkbox" name="checkaudio"  id="checkaudio" checked>
+        <label for="checkaudio">Audio</label>
+        <br />
+        <span class="glyphicon glyphicon-music"></span>
+        <input type="checkbox" name="checkaudio" id="checkmusik" checked>
+        <label for="checkmusik">Musik
+        </label>
+    </div>
+</div>
+</body>
+</html>
