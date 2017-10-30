@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiel</title>
+    @Styles.Render("~/Content/bootstrap.css")
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        #pic {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style> 
+    <script type="text/javascript">
+        var punkte = 0;
+        var bonus = 0;
+        var anzHer = 0;
+        function count() {
+            punkte = punkte + 1;
+            $("#Punktestand").html("Punktestand: " + punkte);
+        }
+        function buyHerwig() {
+            anzHer = anzHer + 1;
+            bonus = bonus + 200;
+            punkte = punkte - 200;
+            $("#Punktestand").html("Punktestand: " + punkte);
+            $("#Boni").html(bonus + " pro Sekunde");
+            $("#Herw").html(anzHer);
+            //activBoni();
+        }
+    </script>
+   
+</head>
+<body>
+<header class="text-left">
+    <button class="btn btn-info btn-lg" onclick="getToMainSceen()">
+        <span class="glyphicon glyphicon-remove"></span> Zurück
+    </button>
+    
+    <h4 id="Punktestand">Punktestand: 0 </h4>
+    <h5 id="Boni">0 pro Sekunde</h5>
+</header>
+<br />
+<div id="pic">
+    <button onclick="buyHerwig()">Herwig<p id="Herw"></p></button>
+    <button onclick="count()">
+        <div>
+            <img src="~/Content/Bilder/Pittinger.png" id="pic" alt="image" class="img-responsive img-rounded" width="200" height="400"/>
+        </div>
+    </button>
+</div>
+</body>
+</html>

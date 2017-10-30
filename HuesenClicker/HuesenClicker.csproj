@@ -150,6 +150,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Bilder\pittinger.png" />
     <Content Include="Content\Bilder\schwechaterFIN.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -191,6 +192,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Start\Start.cshtml" />
     <Content Include="Views\Start\Einstellungen.cshtml" />
+    <Content Include="Views\Start\Spiel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
