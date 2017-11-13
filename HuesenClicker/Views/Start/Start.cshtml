@@ -12,6 +12,16 @@
         <title>Hüsenclicker</title>
         @Styles.Render("~/Content/bootstrap.css")
         @Scripts.Render("~/bundles/modernizr")
+        <script type="text/javascript">
+            function gotoGame()
+            {
+                window.location.replace("http://localhost:52178/Start/Spiel");
+            }
+            function gotoEinstellungen() {
+                window.location.replace("http://localhost:52178/Start/Einstellungen");
+            }
+        </script>
+
     </head>
 <body class="jumbotron">
 <div >
@@ -26,12 +36,12 @@
     <br/>
 
     <div class="col-md-12 text-center" btn-lg>
-        <button type="button" class="btn btn-primary btn-lg col-md-12 text-center">Starten</button>
+        <button type="button" class="btn btn-primary btn-lg col-md-12 text-center" onclick="gotoGame()">Starten</button>
     </div>
     <br/>
 
     <div class="col-md-12 text-center" btn-lg>
-        <button class="btn btn-success btn-lg col-md-12 text-center" onclick="goToEinstellungen()" type="button">Einstellungen</button>
+        <button class="btn btn-success btn-lg col-md-12 text-center" onclick="gotoEinstellungen()" type="button">Einstellungen</button>
     </div>
     
 </div>

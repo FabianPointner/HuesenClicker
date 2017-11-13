@@ -1,6 +1,7 @@
 ﻿
 @{
     Layout = null;
+
 }
 <!DOCTYPE html>
 
@@ -24,19 +25,47 @@
         var punkte = 0;
         var bonus = 0;
         var anzHer = 0;
+        var x = 0;
         function count() {
             punkte = punkte + 1;
             $("#Punktestand").html("Punktestand: " + punkte);
+            if (punkte >= 100) {
+               
+                $("#pic").attr("src", "/Content/Bilder/pittingerR.png");
+            }
+            if (punkte >= 500) {
+                $("#pic").attr("src", "/Content/Bilder/pittingerMae.png");
+
+            }
+            if (punkte >= 1000) {
+                $("#pic").attr("src", "/Content/Bilder/pittingerS.png");
+
+            }
+
         }
+        
         function buyHerwig() {
-            anzHer = anzHer + 1;
-            bonus = bonus + 200;
-            punkte = punkte - 200;
-            $("#Punktestand").html("Punktestand: " + punkte);
-            $("#Boni").html(bonus + " pro Sekunde");
-            $("#Herw").html(anzHer);
-            //activBoni();
+            if (punkte >= 200)
+            {
+                anzHer = anzHer + 1;
+                bonus = bonus + 200;
+                punkte = punkte - 200;
+                $("#Punktestand").html("Punktestand: " + punkte);
+                $("#Boni").html(bonus + " pro Sekunde");
+                $("#Herw").html(anzHer);
+            }
+            else
+            {
+                window.alert("Nicht genügend Punkte!");
+            }
+                       
         }
+        function getToMainSceen()
+        {
+            window.location.replace("http://localhost:52178/Start/Start");
+        }
+       
+        
     </script>
    
 </head>
@@ -50,11 +79,11 @@
     <h5 id="Boni">0 pro Sekunde</h5>
 </header>
 <br />
-<div id="pic">
+<div>
     <button onclick="buyHerwig()">Herwig<p id="Herw"></p></button>
     <button onclick="count()">
-        <div>
-            <img src="~/Content/Bilder/Pittinger.png" id="pic" alt="image" class="img-responsive img-rounded" width="200" height="400"/>
+        <div id="bild">
+            <img src="/Content/Bilder/pittinger.png" id="pic" alt="image" class="img-responsive img-rounded" width="200" height="400" />
         </div>
     </button>
 </div>
